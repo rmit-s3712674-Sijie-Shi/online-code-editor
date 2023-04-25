@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseurl = "https://api.jdoodle.com/v1";
+const baseurl = "https://corsproxy.io/?https://api.jdoodle.com/v1";
 //const sockjsurl = "https://api.jdoodle.com/js/sockjs.js";
 //const webstompurl = "https://api.jdoodle.com/js/webstomp.js";
 const clientId = "fa726691d3392385b477ae05cfc0d906";
@@ -12,9 +12,7 @@ export async function getToken() {
         method: "post",
         url: url,
         headers: {
-          "Content-Type": "text/plain",
-          "Access-Control-Allow-Origin" : "http://localhost/",
-          "access-control-allow-credentials": "true",
+          "Content-Type": "application/json",
         },
         data: {
           clientId: clientId,

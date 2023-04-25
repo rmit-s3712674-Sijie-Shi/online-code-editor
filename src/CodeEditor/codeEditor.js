@@ -1,17 +1,23 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ReactCodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
-import { getToken } from "./service";
+import { getToken, testCode } from "./service";
 
 const CodeEditor = () => {
+    const [codeState, setCodeState] = useState('')
     const onChange = useCallback((value, viewupdate) => {
         console.log(value)
+        setCodeState(value)
     }, [])
 
     useEffect(() => {
         let token = getToken()
         console.log("token: " + token)
     }, [])
+
+    const submitCode = useCallback(() => {
+        testCode(codeState).then(res => console.log(res))
+    }, [codeState])
 
     return(
         <>
@@ -22,6 +28,7 @@ const CodeEditor = () => {
             height="400px"
             width="500px">
             </ReactCodeMirror>
+            <button onClick={() => submitCode()}>submit</button>
         </>
     )
 }
