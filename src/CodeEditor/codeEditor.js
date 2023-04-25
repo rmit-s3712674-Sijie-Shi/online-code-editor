@@ -1,10 +1,16 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import ReactCodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
+import { getToken } from "./service";
 
 const CodeEditor = () => {
     const onChange = useCallback((value, viewupdate) => {
         console.log(value)
+    }, [])
+
+    useEffect(() => {
+        let token = getToken()
+        console.log("token: " + token)
     }, [])
 
     return(
