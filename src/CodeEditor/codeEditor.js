@@ -5,6 +5,7 @@ import { getToken, testCode } from "./service";
 
 const CodeEditor = () => {
     const [codeState, setCodeState] = useState('')
+    const [result, setResult] = useState('')
     const onChange = useCallback((value, viewupdate) => {
         console.log(value)
         setCodeState(value)
@@ -16,7 +17,9 @@ const CodeEditor = () => {
     }, [])
 
     const submitCode = useCallback(() => {
-        testCode(codeState).then(res => console.log(res))
+        testCode(codeState).then(res => {
+            setResult(res.data.output)
+        })
     }, [codeState])
 
     return(
@@ -28,6 +31,9 @@ const CodeEditor = () => {
             height="400px"
             width="500px">
             </ReactCodeMirror>
+            <div>
+            {result ? "Your result: " + result : "Your result: "}
+            </div>
             <button onClick={() => submitCode()}>submit</button>
         </>
     )

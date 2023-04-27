@@ -53,7 +53,7 @@ export async function testCode(code) {
           clientId: clientId,
           clientSecret: clientSecret,
           script: code,
-          language: "javascript"
+          language: "nodejs"
         },
     })
 
