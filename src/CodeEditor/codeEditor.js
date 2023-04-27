@@ -11,11 +11,6 @@ const CodeEditor = () => {
         setCodeState(value)
     }, [])
 
-    useEffect(() => {
-        let token = getToken()
-        console.log("token: " + token)
-    }, [])
-
     const submitCode = useCallback(() => {
         testCode(codeState).then(res => {
             setResult(res.data.output)
