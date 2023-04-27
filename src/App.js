@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import CodeEditor from './CodeEditor/codeEditor';
 import { getToken } from './CodeEditor/service';
+import Container from './Container/container';
 
 function App() {
   useEffect(() => {
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <>
-    <CodeEditor></CodeEditor>
+    <Container></Container>
     </>
   );
 }
