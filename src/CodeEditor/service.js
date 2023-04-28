@@ -8,7 +8,8 @@ const clientSecret = "a3ee7b63c35f71705025234a910fb3b65b2f4ce560f0cf9cead6233c89
 
 export async function getToken() {
     let url = baseurl + "/auth-token"
-    const tokenResponse = await axios({
+    let tokenResponse
+    await axios({
         method: "post",
         url: url,
         headers: {
@@ -19,9 +20,11 @@ export async function getToken() {
           clientSecret: clientSecret,
         },
       })
-      .then(res => console.log(res))
+      .then(res => {
+        tokenResponse = res.data
+        localStorage.setItem("editorToken", tokenResponse)
+      })
       .catch(err => console.error(err));
-
      return tokenResponse
     // const response = await fetch(url, {
     //     method: "POST",
@@ -43,7 +46,8 @@ export async function getToken() {
 
 export async function testCode(code) {
     let url = baseurl + '/execute'
-    const result = await axios({
+    let result
+    await axios({
         method: "post",
         url: url,
         headers: {
@@ -55,7 +59,23 @@ export async function testCode(code) {
           script: code,
           language: "nodejs"
         },
+    }).then(res => {
+      result = res.data
     })
-
+    console.log(result)
     return result
+}
+
+export function getRandomQues(min, max){
+  let result = []
+  function getRandom(){
+      return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+  while(result.length < 5) {
+      let num = getRandom()
+      if(result.indexOf(num) < 0) {
+          result.push(num)
+      }
+  }
+  return result
 }

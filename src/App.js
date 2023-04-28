@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import CodeEditor from './CodeEditor/codeEditor';
-import { getToken } from './CodeEditor/service';
+import { getToken, getRandomQues } from './CodeEditor/service';
 import Container from './Container/container';
 
 function App() {
   useEffect(() => {
-    let token = getToken()
-    console.log("token: " + token)
-    localStorage.setItem("editorToken", token)
+    getToken()
+    let queue = getRandomQues(0,9)    
+    if(!sessionStorage.getItem("queue")){
+      sessionStorage.setItem("queue", queue)
+    }
 }, [])
 
   return (
