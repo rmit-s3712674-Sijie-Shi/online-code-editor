@@ -3,18 +3,49 @@
     border-radius: 1rem;
     padding: 10px;
     margin: 10px;
-    width: 240px;
+    width: 300px;
 }
 
 .cardContainer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .title{
-    font: 1em sans-serif;
+    font: 2em sans-serif;
+    padding-left: 16px;
 }
 
 .qCard {
-
+    padding-top: 10%;
 }
+
+.card {
+    border: 0.4px solid rgb(226, 226, 226);
+    border-radius: 0.4rem;
+    padding: 10px;
+    margin: 10px;
+    min-height: 50px;
+    height: fit-content;
+    transition: background-color 0.6s;
+    
+}
+
+.hover {
+    cursor: pointer;
+}
+
+.hover:hover {
+    background-color:#cceeff44 ;   
+}
+
+.left {
+    opacity: 0.5;
+    cursor: pointer;
+    width: 50px;
+    display: flex;
+  }
+
+  .left:hover {
+    opacity: 1;
+  }
