@@ -1,0 +1,16 @@
+.questionContainer {
+    border: 0.4px solid rgb(226, 226, 226);
+    border-radius: 1rem;
+    padding: 10px;
+    margin: 10px;
+    width: 240px;
+}
+
+.cardContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.title{
+    font: 1em sans-serif;
+}

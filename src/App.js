@@ -12,9 +12,9 @@ function App() {
 }, [])
 
   return (
-    <>
+    <div className='mainContainer'>
     <Container></Container>
-    </>
+    </div>
   );
 }
 
