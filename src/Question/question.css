@@ -1,9 +1,12 @@
 .questionContainer {
     border: 0.4px solid rgb(226, 226, 226);
-    border-radius: 1rem;
+    border-radius: 1rem 0.1rem 0.1rem 1rem;
     padding: 10px;
     margin: 10px;
     width: 300px;
+    height: 576px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .cardContainer{
@@ -17,7 +20,7 @@
 }
 
 .qCard {
-    padding-top: 10%;
+    padding-top: 2%;
 }
 
 .card {
@@ -25,10 +28,10 @@
     border-radius: 0.4rem;
     padding: 10px;
     margin: 10px;
-    min-height: 50px;
+    min-height: 70px;
+    min-width: 240px;
     height: fit-content;
     transition: background-color 0.6s;
-    
 }
 
 .hover {
@@ -49,3 +52,27 @@
   .left:hover {
     opacity: 1;
   }
+
+
+  .questionContainer::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+    border-radius: 2rem;
+}
+
+.questionContainer::-webkit-scrollbar
+{
+	background-color: #F5F5F5;
+    border-radius: 2rem;
+    width: 4px;
+    max-height: 200px;
+}
+
+.questionContainer::-webkit-scrollbar-thumb
+{
+	background-color: #cceeff44;
+}
+
+.questionContainer::-webkit-scrollbar-corner{
+    background-color: transparent;
+}
