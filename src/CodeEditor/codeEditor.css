@@ -5,7 +5,7 @@
     border-radius: 0.1rem 1rem 1rem 0.1rem;
     padding: 10px;
     margin: 10px;
-    height: 576px;
+    height: 100%;
 }
 
 .buttonContainer{
@@ -14,10 +14,12 @@
 
 .saveButton {
     width: 60px;
+    height: 25px;
     margin: 20px;
 }
 
 .submitButton {
     width: 60px;
+    height: 25px;
     margin: 20px;
 }

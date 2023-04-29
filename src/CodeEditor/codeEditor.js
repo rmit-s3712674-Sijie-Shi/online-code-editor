@@ -53,16 +53,16 @@ const CodeEditor = ({title}) => {
                 extensions={[javascript({ typescript: true })]}
                 onChange={onChange}
                 placeholder={"enter your code here"}
-                height="400px"
-                width="500px"
+                height="500px"
+                width="700px"
             >
             </ReactCodeMirror>
+            <div className="buttonContainer">
+            <button className="saveButton" onClick={() => saveCode()} disabled={disableButton}>Save</button>
+            <button className="submitButton" onClick={() => submitCode()} disabled={disableButton}>Test</button>
+            </div>
             <div>
                 {result ? "Your result: " + result : "Your result: "}
-            </div>
-            <div className="buttonContainer">
-            <button className="saveButton" onClick={() => saveCode()} disabled={disableButton}>save</button>
-            <button className="submitButton" onClick={() => submitCode()} disabled={disableButton}>submit</button>
             </div>
         </div>
     )

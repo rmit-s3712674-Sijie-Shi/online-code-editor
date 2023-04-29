@@ -3,8 +3,8 @@
     border-radius: 1rem 0.1rem 0.1rem 1rem;
     padding: 10px;
     margin: 10px;
-    width: 300px;
-    height: 576px;
+    width: 400px;
+    height: 100%;
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -28,7 +28,7 @@
     border-radius: 0.4rem;
     padding: 10px;
     margin: 10px;
-    min-height: 70px;
+    min-height: 95px;
     min-width: 240px;
     height: fit-content;
     transition: background-color 0.6s;

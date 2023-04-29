@@ -1,8 +1,8 @@
 .mainContainer{
   display: flex;
   justify-content: center;
-  padding-top: 5%;
-  height: 92vh;
+  padding-top: 10%;
+  height: 700px;
 }
 
 button{
