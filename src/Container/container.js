@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import CodeEditor from "../CodeEditor/codeEditor";
 import Question from "../Question/question";
 import './container.css'
 
 const Container = () => {
+    const [title, setTitle] = useState()
     return(
         <div className="container">
-            <Question></Question>
-            <CodeEditor></CodeEditor>
+            <Question setTitle={setTitle}></Question>
+            <CodeEditor title={title}></CodeEditor>
         </div>
     )
 }

@@ -6,7 +6,7 @@ import { useState } from "react";
 import QuestionCard from "./questionCard";
 import { useCallback } from "react";
 
-const Question = () => {
+const Question = ({setTitle}) => {
     const [queue, setQueue] = useState([])
     const [questionSelected, setQuestionSelected] = useState()
     const [selected, setSelected] = useState(false)
@@ -18,14 +18,15 @@ const Question = () => {
 
 
     const handleBack = useCallback(() => {
-        console.log("back")
         setQuestionSelected(null)
-        setSelected(false) 
+        setSelected(false)
+        setTitle('') 
     }, [])
 
-    const handleSelectQuestion = useCallback((id) => {
+    const handleSelectQuestion = useCallback((id, title) => {
         setQuestionSelected(id)
-        setSelected(true)  
+        setSelected(true)
+        setTitle(title) 
     }, [])
 
     return(

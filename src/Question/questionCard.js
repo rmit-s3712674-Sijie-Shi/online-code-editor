@@ -6,7 +6,7 @@ const QuestionCard = ({ id, title, detail, hint, result, changeQuestion, handleB
     const [show, setShow] = useState(false)
 
     const clickTask = () => {
-        changeQuestion(id)
+        changeQuestion(id, title)
         setShow(true)
     }
 

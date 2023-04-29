@@ -7,3 +7,17 @@
     margin: 10px;
     height: 576px;
 }
+
+.buttonContainer{
+    display: flex;
+}
+
+.saveButton {
+    width: 60px;
+    margin: 20px;
+}
+
+.submitButton {
+    width: 60px;
+    margin: 20px;
+}

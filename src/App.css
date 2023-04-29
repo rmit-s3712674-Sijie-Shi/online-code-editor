@@ -4,3 +4,10 @@
   padding-top: 5%;
   height: 92vh;
 }
+
+button{
+  background-color: #cceeff44;
+  border: 0.2px solid rgb(226, 226, 226);
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
