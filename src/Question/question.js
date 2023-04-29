@@ -7,7 +7,7 @@ import QuestionCard from "./questionCard";
 import { useCallback } from "react";
 import { TourProvider, useTour } from '@reactour/tour'
 
-const Question = ({setTitle}) => {
+const Question = ({setShowResult, setTitle}) => {
     const [queue, setQueue] = useState([])
     const [questionSelected, setQuestionSelected] = useState()
     const [selected, setSelected] = useState(false)
@@ -35,6 +35,7 @@ const Question = ({setTitle}) => {
         <div className="questionContainer">
             <div className="cardContainer">
                 <div className="title">Question list</div>
+                <button onClick={() => setShowResult(true)}>submit</button>
                 <div className="qCard">
                     { selected ? 
                     <QuestionCard {...data[questionSelected]} key={data[questionSelected].id} handleBack={handleBack}></QuestionCard>

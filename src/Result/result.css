@@ -1,0 +1,33 @@
+.resultContainer {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    z-index: 9999;
+    height: 900px;
+    width: 1200px;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 15px;
+    background-color: aliceblue;
+    top:10%;
+}
+
+.resultSheet {
+    padding-top: 10%;
+}
+
+.resultSheet h1 {
+    color: gray;
+}
+
+.closeResult {
+    font-size: 35px;
+    position: absolute;
+    left: 96%;
+    top: 1%;
+    color: rgb(155, 155, 155);
+    cursor: pointer;
+}
+
+.closeResult:hover {
+    color: rgb(32, 32, 32);
+}

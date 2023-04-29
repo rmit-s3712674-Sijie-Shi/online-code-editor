@@ -3,9 +3,11 @@ import CodeEditor from "../CodeEditor/codeEditor";
 import Question from "../Question/question";
 import './container.css'
 import { TourProvider, useTour } from '@reactour/tour'
+import Result from "../Result/result";
 
 const Container = () => {
     const [title, setTitle] = useState()
+    const [showResult, setShowResult] = useState(false)
     const steps = [
         {
             selector: '.questionContainer',
@@ -20,8 +22,12 @@ const Container = () => {
     return(
         <TourProvider steps={steps}>
         <div className="container">
-            <Question setTitle={setTitle}></Question>
+            <Question setTitle={setTitle} setShowResult={setShowResult} ></Question>
             <CodeEditor title={title}></CodeEditor>
+            { showResult ? <Result setShowResult={setShowResult}></Result>
+                        : null
+            }
+
         </div>
         </TourProvider>
     )
