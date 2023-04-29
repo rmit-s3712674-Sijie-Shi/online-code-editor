@@ -11,14 +11,16 @@ import {
 } from "react-router-dom";
 import Login from './LoginPage/login';
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Login />}>
-      <Route path="main" element={< App/>} />
-      {/* ... etc. */}
-    </Route>
-  )
-);
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<Login/>
+  },
+  {
+    path:"/main",
+    element: <App/>
+  }
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

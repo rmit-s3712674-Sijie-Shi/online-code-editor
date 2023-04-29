@@ -6,10 +6,6 @@ import Container from './Container/container';
 function App() {
   useEffect(() => {
     getToken()
-    let queue = getRandomQues(0,9)    
-    if(!sessionStorage.getItem("queue")){
-      sessionStorage.setItem("queue", queue)
-    }
 }, [])
 
   return (
