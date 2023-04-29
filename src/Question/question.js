@@ -5,17 +5,19 @@ import data from "./questionList.json"
 import { useState } from "react";
 import QuestionCard from "./questionCard";
 import { useCallback } from "react";
+import { TourProvider, useTour } from '@reactour/tour'
 
 const Question = ({setTitle}) => {
     const [queue, setQueue] = useState([])
     const [questionSelected, setQuestionSelected] = useState()
     const [selected, setSelected] = useState(false)
+    const { setIsOpen } = useTour()
     
     useEffect(() => {
       const que = sessionStorage.getItem("queue").split(',')
       setQueue(que)
+      setIsOpen(true)
     },[])
-
 
     const handleBack = useCallback(() => {
         setQuestionSelected(null)
