@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element:<Login/>
   },
   {
-    path:"/main",
+    path:"/online-code-editor/main",
     element: <App/>
   }
 ]);
