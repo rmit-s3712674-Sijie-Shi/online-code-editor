@@ -18,14 +18,20 @@ const CodeEditor = ({title, id, testing}) => {
     const savedCallBack = useRef()
     const [functionStructure, setFunctionStructure] = useState()
     const [finished, setFinished] = useContext(GlobalContext)
-    useEffect(() => {
-        title ? setDisableButton(false) : setDisableButton(true)
-    }, [title])
 
     useEffect(() => {
         console.log(title)
+        setResult('')
+        title ? setDisableButton(false) : setDisableButton(true)
         title ? setFunctionStructure(() => getSavedCode(title)) : setFunctionStructure(() => "Please select a question")
-    }, [title])
+        console.log(codeState)
+        return () => {
+            setResult('')
+            setCodeState('')
+            setFunctionStructure('')
+            setInputValue('')
+        }
+    }, [codeState, title])
 
     useEffect(() => {
         savedCallBack.current = saveCode
@@ -42,10 +48,6 @@ const CodeEditor = ({title, id, testing}) => {
         let id = setInterval(tick, 20000);
         return () => clearInterval(id)
     },[])
-
-    useEffect(() => {
-        setResult()
-    }, [id])
 
     const onChange = useCallback((value, viewupdate) => {
         console.log(value)
@@ -69,6 +71,7 @@ const CodeEditor = ({title, id, testing}) => {
         let testResult = []
         let pass = 0
         let failed = 0
+        console.log(codeState)
         testing ? testing.forEach((res, index) => {
             let code = codeState + `console.log(test(${res.input}))`
             console.log(code)
@@ -95,7 +98,7 @@ const CodeEditor = ({title, id, testing}) => {
         })  
         }) : console.error(`lack of test cases`)
         setDisableButton(false)
-    }, [])
+    }, [codeState])
 
     const saveCode = () => {
         if(title && codeState)
