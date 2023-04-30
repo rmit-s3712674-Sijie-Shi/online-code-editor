@@ -4,10 +4,16 @@ import Question from "../Question/question";
 import './container.css'
 import { TourProvider, useTour } from '@reactour/tour'
 import Result from "../Result/result";
+import GlobalContext from "../global-context";
 
 const Container = () => {
-    const [title, setTitle] = useState()
+    const [title, setTitle] = useState({
+        title: null,
+        id: null,
+        testing: null
+    })
     const [showResult, setShowResult] = useState(false)
+    const [finished, setFinished] = useState([])
     const steps = [
         {
             selector: '.mainContainer',
@@ -25,14 +31,16 @@ const Container = () => {
 
     return(
         <TourProvider steps={steps}>
+            <GlobalContext.Provider value={[finished, setFinished]}>
         <div className="container">
             <Question setTitle={setTitle} setShowResult={setShowResult} ></Question>
-            <CodeEditor title={title}></CodeEditor>
+            <CodeEditor title={title.title} id={title.id} testing={title.testing}></CodeEditor>
             { showResult ? <Result setShowResult={setShowResult}></Result>
                         : null
             }
 
         </div>
+        </GlobalContext.Provider>
         </TourProvider>
     )
 }

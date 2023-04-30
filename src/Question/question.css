@@ -80,3 +80,8 @@
 .questionContainer::-webkit-scrollbar-corner{
     background-color: transparent;
 }
+
+.resultSection {
+    display: flex;
+    flex-direction: column;
+}

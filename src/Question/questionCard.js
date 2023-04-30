@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
+import GlobalContext from "../global-context";
 
-const QuestionCard = ({ id, title, detail, hint, result, changeQuestion, handleBack }) => {
+const QuestionCard = ({ id, title, detail, hint, testing, changeQuestion, handleBack }) => {
 
     const [show, setShow] = useState(false)
-
+    const [finished, setFinished] = useContext(GlobalContext)
     const clickTask = () => {
-        changeQuestion(id, title)
+        changeQuestion(id, title, testing)
         setShow(true)
     }
 
@@ -17,6 +18,7 @@ const QuestionCard = ({ id, title, detail, hint, result, changeQuestion, handleB
 
     return (
         <>
+
         {show? 
         <div id={id} className="card">
             <div className="left" onClick={back}>
@@ -40,7 +42,18 @@ const QuestionCard = ({ id, title, detail, hint, result, changeQuestion, handleB
                 <div >
                     {title}
                 </div>
-            </div>}
+                <div>
+                    {finished.forEach((res) => {
+                        if (res.id === id) {
+                            if(res.finished === true) {
+                                return `Finished`
+                            }
+                        }
+                    }) }
+                </div>
+            </div>
+            
+            }
 
         </>
 

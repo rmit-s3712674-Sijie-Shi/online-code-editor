@@ -24,6 +24,12 @@
     margin: 20px;
 }
 
+.testButton {
+    width: 60px;
+    height: 25px;
+    margin: 20px;
+}
+
 .testInput {
     border-bottom: 1px black solid;
     width: 90px;

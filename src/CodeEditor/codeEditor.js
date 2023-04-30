@@ -1,20 +1,23 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
 import ReactCodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { testCode, gerUrl } from "./service";
 import "./codeEditor.css"
 import SockJS from "sockjs-client";
 import webstomp from "webstomp-client";
+import data from "../Question/questionList.json";
+import GlobalContext from "../global-context";
 
 let socketClient = webstomp.over(new SockJS(`${gerUrl()}/stomp`))
 
-const CodeEditor = ({title}) => {
+const CodeEditor = ({title, id, testing}) => {
     const [inputValue, setInputValue] = useState('')
     const [codeState, setCodeState] = useState('')
     const [result, setResult] = useState('')
     const [disableButton, setDisableButton] = useState()
     const savedCallBack = useRef()
     const [functionStructure, setFunctionStructure] = useState()
+    const [finished, setFinished] = useContext(GlobalContext)
     useEffect(() => {
         title ? setDisableButton(false) : setDisableButton(true)
     }, [title])
@@ -41,8 +44,8 @@ const CodeEditor = ({title}) => {
     },[])
 
     useEffect(() => {
-        title ? setDisableButton(false) : setDisableButton(true)
-    }, [title])
+        setResult()
+    }, [id])
 
     const onChange = useCallback((value, viewupdate) => {
         console.log(value)
@@ -50,14 +53,49 @@ const CodeEditor = ({title}) => {
         //socketClient.send('/app/execute-ws-api-token', value, { message_type: 'input' })
     }, [])
 
-    const submitCode = useCallback(() => {
+    const submitTestCode = useCallback(() => {
         setDisableButton(true)
         testCode(codeState + `console.log(test(${inputValue}))`)
         .then(res => {
             setResult(res.output)
         })
         .then(() => setDisableButton(false))
-    }, [codeState])
+    }, [])
+
+    const submitCode = useCallback(() => {
+        setDisableButton(true)
+        setResult()
+        //let testCases = data[id].testing
+        let testResult = []
+        let pass = 0
+        let failed = 0
+        testing ? testing.forEach((res, index) => {
+            let code = codeState + `console.log(test(${res.input}))`
+            console.log(code)
+            testCode(code)
+            .then(result => {
+            result.output.replace('/n') == res.result ?  pass += 1 :  failed += 1
+            if(pass >= 5) {
+                testResult = `Congrets! You have passed all 5 test cases!`
+                setFinished(res => [...res, {
+                    id: id,
+                    finished: true
+                }])
+                console.log(finished)
+            } else if(index < 4) {
+                testResult = `You have ${pass} test cases passed, ${failed} failed, ${4-index} left.`
+            } else {
+                testResult = `You have ${pass} test cases passed, ${failed} failed, try it again!`
+            }
+            
+            setResult(testResult)
+            if(index === 4) {
+                setDisableButton(false)
+            }
+        })  
+        }) : console.error(`lack of test cases`)
+        setDisableButton(false)
+    }, [])
 
     const saveCode = () => {
         if(title && codeState)
@@ -146,11 +184,12 @@ const CodeEditor = ({title}) => {
             </ReactCodeMirror>
             <div className="buttonContainer">
             <input className="testInput" value={inputValue} onChange={(e) => setInputValue(e.target.value)}></input>
-            <button className="submitButton" onClick={() => submitCode()} disabled={disableButton}>Test</button>
+            <button className="testButton" onClick={() => submitTestCode()} disabled={disableButton}>Test</button>
             <button className="saveButton" onClick={() => saveCode()} disabled={disableButton}>Save</button>
+            <button className="testButton" onClick={() => submitCode()} disabled={disableButton}>submit</button>
             </div>
-            <div>
-                {result ? "Your result: " + result : "Your result: "}
+            <div className="resultSection">
+                {result ? "Your result: \n" + result : "Your result: \n"}
             </div>
         </div>
     )
