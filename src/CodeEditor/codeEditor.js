@@ -74,12 +74,15 @@ const CodeEditor = ({title, id, testing}) => {
         let failed = 0
         console.log(testing)
         testing ? testing.forEach((res, index) => {
-            let code = codeState + `console.log(test("${res.input}"))`
+            let input = JSON.stringify(res.input)
+            console.log(input)
+            let code = codeState + `console.log(test(${input}))`
             console.log(code)
             testCode(code)
             .then(result => {
                 console.log(result.output.replace('/n'), res.result)
-            result.output.replace('/n').trim() == res.result ?  pass += 1 :  failed += 1
+
+            result.output.replace('/n').trim() === res.result?.toString() ?  pass += 1 :  failed += 1
             if(pass >= 5) {
                 testResult = `Congrets! You have passed all 5 test cases!`
                 finish[id] = true
@@ -96,7 +99,7 @@ const CodeEditor = ({title, id, testing}) => {
                 setDisableButton(false)
             }
         }).catch(err => {
-            console.error(err.response.data.error)
+            console.error(err)
         }) 
         }) : console.error(`lack of test cases`)
         setDisableButton(false)

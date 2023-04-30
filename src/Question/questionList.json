@@ -141,57 +141,57 @@
     },
     {
         "id" : 5,
-        "title" : "Delete first item",
-        "detail" : "Create a function to remove the first item of an array, DON'T change the name of the function",
+        "title" : "Add two",
+        "detail" : "Create a function to add 1 to a number, DON'T change the name of the function",
         "hint" : "Return the array, and consider the input is an array",
         "testing": [
             {
-                "input" : ["1","2"],
-                "result" : ["2"]
+                "input" : 1,
+                "result" : 3
             },
             {
-                "input" : ["3", "33", "333"],
-                "result" : ["33","333"]
+                "input" : 2,
+                "result" : 4
             },
             {
-                "input" : ["string", "number"],
-                "result" : ["number"]
+                "input" : 3,
+                "result" : 5
             },
             {
-                "input" : ["test"],
-                "result" : []
+                "input" : 4,
+                "result" : 6
             },
             {
-                "input" : ["play", "test", "number", "read"],
-                "result" : ["test", "number", "read"]
+                "input" : 5,
+                "result" : 7
             }
         ]
     },
     {
         "id" : 6,
-        "title" : "Delete last item",
-        "detail" : "Create a function to delete the last item of an array, DON'T change the name of the function",
+        "title" : "Triple number",
+        "detail" : "Create a function to triple a number, DON'T change the name of the function",
         "hint" : "Return the array, and consider the input is an array",
         "testing": [
             {
-                "input" : ["1","2"],
-                "result" : ["1"]
+                "input" : 1,
+                "result" : 3
             },
             {
-                "input" : ["3", "33", "333"],
-                "result" : ["3","33"]
+                "input" : 2,
+                "result" : 6
             },
             {
-                "input" : ["string", "number"],
-                "result" : ["string"]
+                "input" : 3,
+                "result" : 9
             },
             {
-                "input" : [],
-                "result" : []
+                "input" : 4,
+                "result" : 12
             },
             {
-                "input" : ["play", "test", "number", "read"],
-                "result" : ["play", "test", "number"]
+                "input" : 5,
+                "result" : 15
             }
         ]
     },
