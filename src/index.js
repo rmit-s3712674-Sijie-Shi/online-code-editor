@@ -13,7 +13,7 @@ import Login from './LoginPage/login';
 
 const router = createBrowserRouter([
   {
-    path:"/",
+    path:"/online-code-editor",
     element:<Login/>
   },
   {
