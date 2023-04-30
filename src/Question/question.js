@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import './question.css'
 import { useEffect } from "react";
 import data from "./questionList.json"
@@ -12,12 +12,19 @@ const Question = ({setShowResult, setTitle}) => {
     const [queue, setQueue] = useState([])
     const [questionSelected, setQuestionSelected] = useState()
     const [selected, setSelected] = useState(false)
+    const [finished, setFinished] = useContext(GlobalContext)
     const { setIsOpen } = useTour()
     
     useEffect(() => {
+      let finish = {}
       const que = sessionStorage.getItem("queue").split(',')
       setQueue(que)
       setIsOpen(true)
+      que.forEach(res => {
+        console.log(res)
+        finish[res] = false
+      })
+      setFinished(finish)
     },[])
 
     const handleBack = useCallback(() => {

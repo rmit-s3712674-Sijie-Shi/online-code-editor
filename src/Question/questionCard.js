@@ -43,13 +43,7 @@ const QuestionCard = ({ id, title, detail, hint, testing, changeQuestion, handle
                     {title}
                 </div>
                 <div>
-                    {finished.forEach((res) => {
-                        if (res.id === id) {
-                            if(res.finished === true) {
-                                return `Finished`
-                            }
-                        }
-                    }) }
+                    {finished[id] ? "Good Job! You have solved this Question" : "click to start" }
                 </div>
             </div>
             

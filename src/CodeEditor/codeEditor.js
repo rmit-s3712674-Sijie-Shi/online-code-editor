@@ -80,10 +80,7 @@ const CodeEditor = ({title, id, testing}) => {
             result.output.replace('/n') == res.result ?  pass += 1 :  failed += 1
             if(pass >= 5) {
                 testResult = `Congrets! You have passed all 5 test cases!`
-                setFinished(res => [...res, {
-                    id: id,
-                    finished: true
-                }])
+                setFinished(res => res[id] = true)
                 console.log(finished)
             } else if(index < 4) {
                 testResult = `You have ${pass} test cases passed, ${failed} failed, ${4-index} left.`
@@ -95,7 +92,9 @@ const CodeEditor = ({title, id, testing}) => {
             if(index === 4) {
                 setDisableButton(false)
             }
-        }).catch(err => console.error(err.response.data.error)) 
+        }).catch(err => {
+            console.error(err.response.data.error)
+        }) 
         }) : console.error(`lack of test cases`)
         setDisableButton(false)
     }, [codeState, finished, id, setFinished, testing])
