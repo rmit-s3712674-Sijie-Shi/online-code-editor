@@ -68,22 +68,25 @@ const CodeEditor = ({title, id, testing}) => {
         setDisableButton(true)
         setResult()
         //let testCases = data[id].testing
+        let finish = finished
         let testResult = []
         let pass = 0
         let failed = 0
         console.log(testing)
         testing ? testing.forEach((res, index) => {
-            let code = codeState + `console.log(test(${res.input}))`
+            let code = codeState + `console.log(test("${res.input}"))`
             console.log(code)
             testCode(code)
             .then(result => {
-            result.output.replace('/n') == res.result ?  pass += 1 :  failed += 1
+                console.log(result.output.replace('/n'), res.result)
+            result.output.replace('/n').trim() == res.result ?  pass += 1 :  failed += 1
             if(pass >= 5) {
                 testResult = `Congrets! You have passed all 5 test cases!`
-                setFinished(res => res[id] = true)
+                finish[id] = true
+                setFinished(finish)
                 console.log(finished)
-            } else if(index < 4) {
-                testResult = `You have ${pass} test cases passed, ${failed} failed, ${4-index} left.`
+            } else if(failed < 5) {
+                testResult = `You have ${pass} test cases passed, ${failed} failed.`
             } else {
                 testResult = `You have ${pass} test cases passed, ${failed} failed, try it again!`
             }

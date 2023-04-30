@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import GlobalContext from "../global-context";
 
@@ -15,6 +15,10 @@ const QuestionCard = ({ id, title, detail, hint, testing, changeQuestion, handle
         handleBack()
         setShow(false)
     }
+
+    useEffect(() => {
+        console.log(finished[id])
+    })
 
     return (
         <>

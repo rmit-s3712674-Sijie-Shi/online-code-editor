@@ -5,8 +5,8 @@ import webstomp from "webstomp-client";
 const baseurl = "https://corsproxy.io/?https://api.jdoodle.com/v1";
 //const sockjsurl = "https://api.jdoodle.com/js/sockjs.js";
 //const webstompurl = "https://api.jdoodle.com/js/webstomp.js";
-const clientId = "fa726691d3392385b477ae05cfc0d906";
-const clientSecret = "a3ee7b63c35f71705025234a910fb3b65b2f4ce560f0cf9cead6233c89133fd9";
+const clientId = "145221a39e7456395d87bad5398c30fa";
+const clientSecret = "bc60cad70b782e6785c0aead6418d7839211b9642468d7e87a9f2af52412314e";
 
 export async function getToken() {
     let url = baseurl + "/auth-token"

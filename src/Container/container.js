@@ -13,7 +13,7 @@ const Container = () => {
         testing: null
     })
     const [showResult, setShowResult] = useState(false)
-    const [finished, setFinished] = useState([])
+    const [finished, setFinished] = useState()
     const steps = [
         {
             selector: '.mainContainer',

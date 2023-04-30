@@ -198,12 +198,12 @@
     {
         "id" : 7,
         "title" : "Add a letter",
-        "detail" : "Create a function to add S letter at the end of a string, DON'T change the name of the function",
+        "detail" : "Create a function to add s letter at the end of a string, DON'T change the name of the function",
         "hint" : "Return a string, and consider the input is a string",
         "testing": [
             {
                 "input" : "1",
-                "result" : "1S"
+                "result" : "1s"
             },
             {
                 "input" : "hi",
