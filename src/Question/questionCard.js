@@ -22,16 +22,16 @@ const QuestionCard = ({ id, title, detail, hint, result, changeQuestion, handleB
             <div className="left" onClick={back}>
                  &lt;back
             </div>
-            <div >
-                Question:
+            <div className="cardSection">
+                Question: <br></br>
                 {title}
             </div>
-            <div>
-                Description: 
+            <div className="cardSection">
+                Description: <br></br>
                 {detail}
             </div>
-            <div>
-                Hint:
+            <div className="cardSection">
+                Hint:<br></br>
                 {hint}
             </div>
         </div> 

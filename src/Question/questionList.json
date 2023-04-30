@@ -2,71 +2,281 @@
     {
         "id" : 0,
         "title" : "Test one",
-        "detail" : "This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description ",
-        "hint" : "This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint ",
-        "result": "This is result"
+        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "hint" : "Return the number, and consider the input might be a string",
+        "testing": [
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            }
+        ]
     },
     {
         "id" : 1,
         "title" : "Test two",
-        "detail" : "This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description ",
-        "hint" : "This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint ",
-        "result": "This is result"
+        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "hint" : "Return the number, and consider the input might be a string",
+        "testing": [
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            }
+        ]
     },
     {
         "id" : 2,
         "title" : "Test three",
-        "detail" : "This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description ",
-        "hint" : "This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint ",
-        "result": "This is result"
+        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "hint" : "Return the number, and consider the input might be a string",
+        "testing": [
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            }
+        ]
     },
     {
         "id" : 3,
         "title" : "Test four",
-        "detail" : "This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description ",
-        "hint" : "This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint ",
-        "result": "This is result"
+        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "hint" : "Return the number, and consider the input might be a string",
+        "testing": [
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            }
+        ]
     },
     {
         "id" : 4,
         "title" : "Test five",
-        "detail" : "This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description ",
-        "hint" : "This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint ",
-        "result": "This is result"
+        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "hint" : "Return the number, and consider the input might be a string",
+        "testing": [
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            }
+        ]
     },
     {
         "id" : 5,
         "title" : "Test six",
-        "detail" : "This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description ",
-        "hint" : "This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint ",
-        "result": "This is result"
+        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "hint" : "Return the number, and consider the input might be a string",
+        "testing": [
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            }
+        ]
     },
     {
         "id" : 6,
         "title" : "Test seven",
-        "detail" : "This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description ",
-        "hint" : "This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint ",
-        "result": "This is result"
+        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "hint" : "Return the number, and consider the input might be a string",
+        "testing": [
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            }
+        ]
     },
     {
         "id" : 7,
         "title" : "Test eight",
-        "detail" : "This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description ",
-        "hint" : "This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint ",
-        "result": "This is result"
+        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "hint" : "Return the number, and consider the input might be a string",
+        "testing": [
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            }
+        ]
     },
     {
         "id" : 8,
         "title" : "Test nine",
-        "detail" : "This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description ",
-        "hint" : "This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint ",
-        "result": "This is result"
+        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "hint" : "Return the number, and consider the input might be a string",
+        "testing": [
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            }
+        ]
     },
     {
         "id" : 9,
         "title" : "Test ten",
-        "detail" : "This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description This is a long description ",
-        "hint" : "This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint This is a long hint ",
-        "result": "This is result"
+        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "hint" : "Return the number, and consider the input might be a string",
+        "testing": [
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            },
+            {
+                "input" : 1,
+                "result" : 2
+            }
+        ]
     }
 ]

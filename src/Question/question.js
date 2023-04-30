@@ -22,7 +22,7 @@ const Question = ({setShowResult, setTitle}) => {
     const handleBack = useCallback(() => {
         setQuestionSelected(null)
         setSelected(false)
-        setTitle('') 
+        setTitle() 
     }, [])
 
     const handleSelectQuestion = useCallback((id, title) => {

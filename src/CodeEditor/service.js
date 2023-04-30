@@ -1,4 +1,6 @@
 import axios from "axios";
+import SockJS from "sockjs-client";
+import webstomp from "webstomp-client";
 
 const baseurl = "https://corsproxy.io/?https://api.jdoodle.com/v1";
 //const sockjsurl = "https://api.jdoodle.com/js/sockjs.js";
@@ -26,22 +28,6 @@ export async function getToken() {
       })
       .catch(err => console.error(err));
      return tokenResponse
-    // const response = await fetch(url, {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //         "Access-Control-Allow-Origin": "*"
-    //     },
-    //     body: {
-    //         clientId: clientId,
-    //         clientSecret: clientSecret,
-    //     }
-    // })
-
-    // const result = await response.json()
-    // console.log(result)
-
-    //return result
 }
 
 export async function testCode(code) {
@@ -64,6 +50,15 @@ export async function testCode(code) {
     })
     console.log(result)
     return result
+}
+
+export function linkSocket(){
+  let socketClient = webstomp.over(new SockJS(`${baseurl} + "stomp"`))
+  return socketClient
+}
+
+export function gerUrl(){
+  return baseurl
 }
 
 export function getRandomQues(min, max){

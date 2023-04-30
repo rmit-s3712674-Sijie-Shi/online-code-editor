@@ -23,3 +23,9 @@
     height: 25px;
     margin: 20px;
 }
+
+.testInput {
+    border-bottom: 1px black solid;
+    width: 90px;
+    color: black;
+}

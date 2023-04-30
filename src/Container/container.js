@@ -10,7 +10,11 @@ const Container = () => {
     const [showResult, setShowResult] = useState(false)
     const steps = [
         {
-            selector: '.questionContainer',
+            selector: '.mainContainer',
+            content: "Start your coding test."
+        },
+        {
+            selector: '.cardContainer',
             content: "This is your question list."
         },
         {
