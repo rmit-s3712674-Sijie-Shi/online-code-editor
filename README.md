@@ -48,3 +48,4 @@ This APP is an ongoing project, several features to be finished in the future.
 1. add register user and integrate it with backend service
 2. add more thorough test cases for questions
 3. add multi-user features
+4. fix websocket CORS issue
