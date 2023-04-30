@@ -14,6 +14,7 @@ const Container = () => {
     })
     const [showResult, setShowResult] = useState(false)
     const [finished, setFinished] = useState()
+
     // steps for reactour
     // selector is to select the className where you want to put an indicator
     const steps = [
@@ -35,8 +36,8 @@ const Container = () => {
         <TourProvider steps={steps}>
             <GlobalContext.Provider value={[finished, setFinished]}>
         <div className="container">
-            <Question setTitle={setTitle} setShowResult={setShowResult} ></Question>
-            <CodeEditor title={title.title} id={title.id} testing={title.testing}></CodeEditor>
+            <Question setTitle={setTitle}></Question>
+            <CodeEditor title={title.title} id={title.id} testing={title.testing} setShowResult={setShowResult}></CodeEditor>
             { showResult ? <Result setShowResult={setShowResult}></Result>
                         : null
             }

@@ -10,7 +10,7 @@ import GlobalContext from "../global-context";
 
 let socketClient = webstomp.over(new SockJS(`${gerUrl()}/stomp`))
 
-const CodeEditor = ({title, id, testing}) => {
+const CodeEditor = ({title, id, testing,setShowResult}) => {
     const [inputValue, setInputValue] = useState('')
     const [codeState, setCodeState] = useState('')
     const [result, setResult] = useState('')
@@ -94,10 +94,14 @@ const CodeEditor = ({title, id, testing}) => {
                 testResult = `Congrets! You have passed all 5 test cases!`
                 finish[id] = true
                 setFinished(finish)
-                console.log(finished)
+                checkAll()
             } else if(failed < 5) {
+                finish[id] = false
+                setFinished(finish)
                 testResult = `You have ${pass} test cases passed, ${failed} failed.`
             } else {
+                finish[id] = false
+                setFinished(finish)
                 testResult = `You have ${pass} test cases passed, ${failed} failed, try it again!`
             }
             
@@ -105,7 +109,8 @@ const CodeEditor = ({title, id, testing}) => {
             if(index === 4) {
                 setDisableButton(false)
             }
-        }).catch(err => {
+        })
+        .catch(err => {
             console.error(err)
         }) 
         }) : console.error(`lack of test cases`)
@@ -184,6 +189,15 @@ const CodeEditor = ({title, id, testing}) => {
     const onWsConnectionFailed = (e) => {
         console.log("connection failed")
         console.log(e)
+    }
+
+    const checkAll = () => {
+        for(let val of Object.values(finished)){
+            if (!val) return false
+        }
+        console.log('check')
+        setShowResult(() => true)
+        console.log('tt')
     }
 
     return (

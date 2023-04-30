@@ -12,11 +12,23 @@
 }
 
 .resultSheet {
-    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20%;
 }
 
 .resultSheet h1 {
     color: gray;
+}
+
+.resultSheet h2 {
+    color: gray;
+    padding-top: 20px;
+}
+
+.resultSheet h3 {
+    color: gray;
+    padding-top: 20px;
 }
 
 .closeResult {
