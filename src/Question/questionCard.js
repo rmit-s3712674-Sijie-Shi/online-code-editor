@@ -46,7 +46,7 @@ const QuestionCard = ({ id, title, detail, hint, testing, changeQuestion, handle
                 <div >
                     {title}
                 </div>
-                <div>
+                <div className="qestionResult">
                     {finished[id] ? "Good Job! You have solved this Question" : "click to start" }
                 </div>
             </div>

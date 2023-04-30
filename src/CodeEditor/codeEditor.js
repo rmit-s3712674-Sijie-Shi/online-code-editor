@@ -37,9 +37,9 @@ const CodeEditor = ({title, id, testing}) => {
         savedCallBack.current = saveCode
     })
 
-    // useEffect(() => {
-    //     socketClient.connect({}, onWsConnection, onWsConnectionFailed)
-    // })
+    useEffect(() => {
+        socketClient.connect({}, onWsConnection, onWsConnectionFailed)
+    })
 
     useEffect(() => {
         function tick() {
@@ -52,7 +52,7 @@ const CodeEditor = ({title, id, testing}) => {
     const onChange = useCallback((value, viewupdate) => {
         console.log(value)
         setCodeState(value)
-        //socketClient.send('/app/execute-ws-api-token', value, { message_type: 'input' })
+        socketClient.send('/app/execute-ws-api-token', value, { message_type: 'input' })
     }, [])
 
     const submitTestCode = useCallback(() => {
@@ -171,7 +171,7 @@ const CodeEditor = ({title, id, testing}) => {
             language: 'nodejs',
             versionIndex:4
         })
-       // socketClient.send('/app/execute-ws-api-token', data, { message_type: 'execute', token: token })
+        socketClient.send('/app/execute-ws-api-token', data, { message_type: 'execute', token: token })
     }
     const onWsConnectionFailed = (e) => {
         console.log("connection failed")
