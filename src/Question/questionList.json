@@ -1,8 +1,8 @@
 [
     {
         "id" : 0,
-        "title" : "Test one",
-        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "title" : "Add one",
+        "detail" : "Create a function to add 1 to a number, DON'T change the name of the function",
         "hint" : "Return the number, and consider the input might be a string",
         "testing": [
             {
@@ -10,26 +10,26 @@
                 "result" : 2
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 2,
+                "result" : 3
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 3,
+                "result" : 4
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 4,
+                "result" : 5
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 5,
+                "result" : 6
             }
         ]
     },
     {
         "id" : 1,
-        "title" : "Test two",
+        "title" : "Double number",
         "detail" : "Create a function to doule a number, DON'T change the name of the function",
         "hint" : "Return the number, and consider the input might be a string",
         "testing": [
@@ -38,244 +38,244 @@
                 "result" : 2
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 2,
+                "result" : 4
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 3,
+                "result" : 6
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 4,
+                "result" : 8
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 5,
+                "result" : 10
             }
         ]
     },
     {
         "id" : 2,
-        "title" : "Test three",
-        "detail" : "Create a function to doule a number, DON'T change the name of the function",
+        "title" : "Minus one",
+        "detail" : "Create a function to minus 1 to a number, DON'T change the name of the function",
         "hint" : "Return the number, and consider the input might be a string",
         "testing": [
             {
                 "input" : 1,
+                "result" : 0
+            },
+            {
+                "input" : 2,
+                "result" : 1
+            },
+            {
+                "input" : 3,
                 "result" : 2
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 4,
+                "result" : 3
             },
             {
-                "input" : 1,
-                "result" : 2
-            },
-            {
-                "input" : 1,
-                "result" : 2
-            },
-            {
-                "input" : 1,
-                "result" : 2
+                "input" : 5,
+                "result" : 4
             }
         ]
     },
     {
         "id" : 3,
-        "title" : "Test four",
-        "detail" : "Create a function to doule a number, DON'T change the name of the function",
-        "hint" : "Return the number, and consider the input might be a string",
+        "title" : "Capitalize",
+        "detail" : "Create a function to capitalize letters, DON'T change the name of the function",
+        "hint" : "Return the string",
         "testing": [
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "hi",
+                "result" : "HI"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "test",
+                "result" : "TEST"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "hello",
+                "result" : "HELLO"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "play",
+                "result" : "PLAY"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "system",
+                "result" : "SYSTEM"
             }
         ]
     },
     {
         "id" : 4,
-        "title" : "Test five",
-        "detail" : "Create a function to doule a number, DON'T change the name of the function",
-        "hint" : "Return the number, and consider the input might be a string",
+        "title" : "Reverse string",
+        "detail" : "Create a function reverse a string, DON'T change the name of the function",
+        "hint" : "Return the string",
         "testing": [
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "hi",
+                "result" : "ih"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "test",
+                "result" : "tset"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "hello",
+                "result" : "olleh"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "play",
+                "result" : "yalp"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "system",
+                "result" : "metsys"
             }
         ]
     },
     {
         "id" : 5,
-        "title" : "Test six",
-        "detail" : "Create a function to doule a number, DON'T change the name of the function",
-        "hint" : "Return the number, and consider the input might be a string",
+        "title" : "Delete first item",
+        "detail" : "Create a function to remove the first item of an array, DON'T change the name of the function",
+        "hint" : "Return the array, and consider the input is an array",
         "testing": [
             {
-                "input" : 1,
-                "result" : 2
+                "input" : ["1","2"],
+                "result" : ["2"]
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : ["3", "33", "333"],
+                "result" : ["33","333"]
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : ["string", "number"],
+                "result" : ["number"]
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : ["test"],
+                "result" : []
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : ["play", "test", "number", "read"],
+                "result" : ["test", "number", "read"]
             }
         ]
     },
     {
         "id" : 6,
-        "title" : "Test seven",
-        "detail" : "Create a function to doule a number, DON'T change the name of the function",
-        "hint" : "Return the number, and consider the input might be a string",
+        "title" : "Delete last item",
+        "detail" : "Create a function to delete the last item of an array, DON'T change the name of the function",
+        "hint" : "Return the array, and consider the input is an array",
         "testing": [
             {
-                "input" : 1,
-                "result" : 2
+                "input" : ["1","2"],
+                "result" : ["1"]
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : ["3", "33", "333"],
+                "result" : ["3","33"]
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : ["string", "number"],
+                "result" : ["string"]
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : [],
+                "result" : []
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : ["play", "test", "number", "read"],
+                "result" : ["play", "test", "number"]
             }
         ]
     },
     {
         "id" : 7,
-        "title" : "Test eight",
-        "detail" : "Create a function to doule a number, DON'T change the name of the function",
-        "hint" : "Return the number, and consider the input might be a string",
+        "title" : "Add a letter",
+        "detail" : "Create a function to add S letter at the end of a string, DON'T change the name of the function",
+        "hint" : "Return a string, and consider the input is a string",
         "testing": [
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "1",
+                "result" : "1S"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "hi",
+                "result" : "his"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "six",
+                "result" : "sixs"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "ss",
+                "result" : "sss"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : "sa",
+                "result" : "sas"
             }
         ]
     },
     {
         "id" : 8,
-        "title" : "Test nine",
-        "detail" : "Create a function to doule a number, DON'T change the name of the function",
-        "hint" : "Return the number, and consider the input might be a string",
+        "title" : "Check even or odd",
+        "detail" : "Create a function to check the number is even or odd, DON'T change the name of the function",
+        "hint" : "Return even or odd, and consider the input might be a string",
         "testing": [
             {
                 "input" : 1,
-                "result" : 2
+                "result" : "odd"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 2,
+                "result" : "even"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 3,
+                "result" : "odd"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 4,
+                "result" :"even"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 5,
+                "result" : "odd"
             }
         ]
     },
     {
         "id" : 9,
-        "title" : "Test ten",
-        "detail" : "Create a function to doule a number, DON'T change the name of the function",
-        "hint" : "Return the number, and consider the input might be a string",
+        "title" : "Negative or not",
+        "detail" : "Create a function to check the number is negative or not, DON'T change the name of the function",
+        "hint" : "Return yes or no, and consider the input might be a string",
         "testing": [
             {
                 "input" : 1,
-                "result" : 2
+                "result" : "no"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : -1,
+                "result" : "yes"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 2,
+                "result" : "no"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : 3,
+                "result" : "no"
             },
             {
-                "input" : 1,
-                "result" : 2
+                "input" : -11,
+                "result" : "yes"
             }
         ]
     }
