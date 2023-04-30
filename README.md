@@ -1,6 +1,6 @@
-# An online code test
+# An online javascript code test
 
-This is an online code test with an online code editor. It fully depends on [JDoole](https://docs.jdoodle.com/). There will be five random questions, and you can submit your answers and will be examined by JDoole API.
+This is an online code test with an online javascript code editor. It fully depends on [JDoole](https://docs.jdoodle.com/) and [react-codemirror](https://github.com/uiwjs/react-codemirror). There will be five random questions, and you can submit your answers and will be examined by JDoole API.
 
 ---
 
@@ -32,6 +32,9 @@ You can either save the code manually by pressing save button, or you can leave 
 
 If you are really confidence with your solution, you can press submit button, and the system will provide if your job can pass all of the five test cases or not. Note: because this APP is using free [JDoole API](https://www.jdoodle.com/compiler-api/), only 200 times everyday to check your work.
 
+### Once you finished
+
+You will get a result page.
 ## Dependencies
 
 React.js
@@ -40,6 +43,7 @@ react-joyride
 reactour/tour
 sockjs-client
 webstomp-client
+react-codemirror
 
 ## TODO
 
@@ -49,3 +53,4 @@ This APP is an ongoing project, several features to be finished in the future.
 2. add more thorough test cases for questions
 3. add multi-user features
 4. fix websocket CORS issue
+5. support other languages
