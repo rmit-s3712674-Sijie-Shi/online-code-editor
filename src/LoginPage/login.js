@@ -18,6 +18,7 @@ const Login = () => {
         navigate("main")
     }
 
+    //change the information in the block
     const toRegister = () => {
         setHidden(false)
     }

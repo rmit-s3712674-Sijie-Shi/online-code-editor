@@ -14,6 +14,8 @@ const Container = () => {
     })
     const [showResult, setShowResult] = useState(false)
     const [finished, setFinished] = useState()
+    // steps for reactour
+    // selector is to select the className where you want to put an indicator
     const steps = [
         {
             selector: '.mainContainer',

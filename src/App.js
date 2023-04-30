@@ -4,6 +4,7 @@ import { getToken, getRandomQues } from './CodeEditor/service';
 import Container from './Container/container';
 
 function App() {
+  //get token for api
   useEffect(() => {
     getToken()
 }, [])

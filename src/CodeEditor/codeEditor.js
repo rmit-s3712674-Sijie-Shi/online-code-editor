@@ -20,11 +20,12 @@ const CodeEditor = ({title, id, testing}) => {
     const [finished, setFinished] = useContext(GlobalContext)
 
     useEffect(() => {
-        console.log(testing)
         setResult('')
+        //if there is not a title, set button disabled
         title ? setDisableButton(false) : setDisableButton(true)
+        //if have a title, set code editor value to a saved value, or a prepared code framework
         title ? setFunctionStructure(() => getSavedCode(title)) : setFunctionStructure(() => "Please select a question")
-        console.log(codeState)
+        //reset those parameters when component distroyed
         return () => {
             setResult('')
             setCodeState('')
@@ -34,13 +35,15 @@ const CodeEditor = ({title, id, testing}) => {
     }, [testing, title])
 
     useEffect(() => {
-        savedCallBack.current = saveCode
-    })
-
-    useEffect(() => {
         socketClient.connect({}, onWsConnection, onWsConnectionFailed)
     })
 
+    //set ref for auto saving
+    useEffect(() => {
+        savedCallBack.current = saveCode
+    })
+
+    //call auto saving and kill the interval when component distroyed
     useEffect(() => {
         function tick() {
             savedCallBack.current()
@@ -49,12 +52,13 @@ const CodeEditor = ({title, id, testing}) => {
         return () => clearInterval(id)
     },[])
 
+    //save value to state, send value to websocket
     const onChange = useCallback((value, viewupdate) => {
-        console.log(value)
         setCodeState(value)
         socketClient.send('/app/execute-ws-api-token', value, { message_type: 'input' })
     }, [])
 
+    //test code with entered parameter
     const submitTestCode = useCallback(() => {
         setDisableButton(true)
         testCode(codeState + `console.log(test(${inputValue}))`)
@@ -64,6 +68,7 @@ const CodeEditor = ({title, id, testing}) => {
         .then(() => setDisableButton(false))
     }, [codeState, inputValue])
 
+    //test code with five cases
     const submitCode = useCallback(() => {
         setDisableButton(true)
         setResult()
@@ -72,17 +77,19 @@ const CodeEditor = ({title, id, testing}) => {
         let testResult = []
         let pass = 0
         let failed = 0
-        console.log(testing)
         testing ? testing.forEach((res, index) => {
             let input = JSON.stringify(res.input)
-            console.log(input)
+            //integrate code
             let code = codeState + `console.log(test(${input}))`
-            console.log(code)
             testCode(code)
             .then(result => {
-                console.log(result.output.replace('/n'), res.result)
-
+            //trim received data
+            //data receive always be a string,
+            //if result contain array, there will be many redundant spaces, and hard to be trimmed
+            //so currently only the test with string and number results are considered as valid tests
             result.output.replace('/n').trim() === res.result?.toString() ?  pass += 1 :  failed += 1
+
+            //if all 5 test passed, show congrets message, otherwise show the number of failed test
             if(pass >= 5) {
                 testResult = `Congrets! You have passed all 5 test cases!`
                 finish[id] = true
@@ -117,7 +124,8 @@ const CodeEditor = ({title, id, testing}) => {
         setCodeState(code)
         return code ? code : "function test(a){}"
     }
-
+    //websocket connection
+    //check https://docs.jdoodle.com/integrating-compiler-ide-to-your-application/compiler-api/websocket-api
     const onWsConnection = () => {
         let token = localStorage.getItem("editorToken")
         socketClient.subscribe("/user/queue/execute-i", (message) => {

@@ -61,6 +61,7 @@ export function gerUrl(){
   return baseurl
 }
 
+// get random numbers, includes min and max
 export function getRandomQues(min, max){
   let result = []
   function getRandom(){

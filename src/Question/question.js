@@ -20,6 +20,7 @@ const Question = ({setShowResult, setTitle}) => {
       const que = sessionStorage.getItem("queue").split(',')
       setQueue(que)
       setIsOpen(true)
+      //add an object to store the status of each question by id, if they are solved or not
       que.forEach(res => {
         console.log(res)
         finish[res] = false
