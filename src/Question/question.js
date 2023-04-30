@@ -8,7 +8,7 @@ import { useCallback } from "react";
 import { TourProvider, useTour } from '@reactour/tour';
 import GlobalContext from "../global-context";
 
-const Question = ({setShowResult, setTitle}) => {
+const Question = ({setTitle}) => {
     const [queue, setQueue] = useState([])
     const [questionSelected, setQuestionSelected] = useState()
     const [selected, setSelected] = useState(false)
